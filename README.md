@@ -20,9 +20,11 @@ De waarde in °/s kan berekent worden met de formule: ```waarde / 131 = ... °/s
 ```
 read_acc(); 
 ```
-Het gebruik van de functie is hetzelfde als <b>read_gyro()</b>. De accelerometer geeft de stand van de chip terug in de x, y en z. Hiermee kun je dus weten in welke hoek de chip staat. De g krachten kunnen berekent worden met de formule: ```waarde / 16384 = ... g```
+Het gebruik van de functie is hetzelfde als <b>read_gyro()</b>. De accelerometer geeft de stand van de chip terug in de x, y en z. Hiermee kun je dus weten in welke hoek de chip staat. 
+De g krachten kunnen berekent worden met de formule: ```waarde / 16384 = ... g```
 
 ```
 read_temp(); 
 ```
-Deze functie geeft een int16_t waarde terug dat de temperatuur representeert. De graden kunnen berekent worden door middel van de volgende formule: ```waarde / 340 + 36.53 = ... °/c```.
+Deze functie geeft een int16_t waarde terug dat de temperatuur representeert. 
+De graden kunnen berekent worden door middel van de volgende formule: ```waarde / 340 + 36.53 = ... °/c```.

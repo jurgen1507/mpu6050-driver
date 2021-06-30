@@ -3,7 +3,8 @@ Driver voor de mpu6050 (comments in NL)
 
 Voor gebruik van de driver #include "mpu6050-driver.hpp"
 
-<b>Hoofdfuncties</b>
+<h1>Hoofdfuncties</h1>
+
 ```
 start();
 ```
@@ -28,3 +29,19 @@ read_temp();
 ```
 Deze functie geeft een int16_t waarde terug dat de temperatuur representeert. 
 De graden kunnen berekent worden door middel van de volgende formule: ```waarde / 340 + 36.53 = ... °/c```.
+
+<h1>Configuratiefuncties</h1>
+
+```
+filter_gyro(int value);
+```
+Bij deze functie kan de gebruiker een low pass filter op de gyroscoop zetten. Dit gebeurt in de chip digitaal. Het filter zal ervoor zorgen dat de metingen minder erg zullen schokken. Het filter kun je instellen met waarden van 0 tot en met 6.
+
+```
+filter_acc(int value);
+```
+Het nut en gebruik van de functie is hetzelfde als die van de gyroscoop maar dan voor de accelerometer.
+```
+filter_temp(int value);
+```
+Het nut en gebruik van de functie is hetzelfde als die van de gyroscoop maar dan voor de temperatuursensor.

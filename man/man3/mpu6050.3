@@ -1,0 +1,101 @@
+.TH "mpu6050" 3 "Mon Jun 28 2021" "IPASS" \" -*- nroff -*-
+.ad l
+.nh
+.SH NAME
+mpu6050
+.SH SYNOPSIS
+.br
+.PP
+.SS "Public Member Functions"
+
+.in +1c
+.ti -1c
+.RI "\fBmpu6050\fP (hwlib::i2c_bus &bus)"
+.br
+.ti -1c
+.RI "bool \fBstart\fP ()"
+.br
+.RI "Start functie voor de mpu, zal true teruggeven als het gelukt is/false als het niet gelukt is\&. "
+.ti -1c
+.RI "void \fBwrite\fP (const uint_fast8_t value)"
+.br
+.RI "Schrijf waarde naar mpu register\&. "
+.ti -1c
+.RI "void \fBwrite_register\fP (const uint_fast8_t r_address, const uint_fast8_t value)"
+.br
+.RI "Schrijf waarde naar specifiek register in de mpu chip\&. "
+.ti -1c
+.RI "uint8_t \fBread8\fP (uint8_t r_address)"
+.br
+.RI "Lees 8 bits uit i2c bus\&. "
+.ti -1c
+.RI "int16_t \fBread16\fP (uint8_t r_address_high, uint8_t r_address_low)"
+.br
+.RI "Lees 16 bits uit i2c bus\&. "
+.ti -1c
+.RI "\fBsensordata\fP \fBread_gyro\fP ()"
+.br
+.RI "Lees gyroscoop en geef terug als sensordata\&. "
+.ti -1c
+.RI "\fBsensordata\fP \fBread_acc\fP ()"
+.br
+.RI "Lees accelerometer en geef terug als sensordata\&. "
+.ti -1c
+.RI "int16_t \fBread_temp\fP ()"
+.br
+.RI "Lees temperatuur en geef terug als 16 bits integer\&. "
+.in -1c
+.SH "Member Function Documentation"
+.PP 
+.SS "int16_t mpu6050::read16 (uint8_t r_address_high, uint8_t r_address_low)"
+
+.PP
+Lees 16 bits uit i2c bus\&. Geef de eerste en laatse 8 bits door ze per stuk te lezen
+.PP
+Geef die waarde terug
+.SS "uint8_t mpu6050::read8 (uint8_t r_address)"
+
+.PP
+Lees 8 bits uit i2c bus\&. Schrijf welk register er gelezen moet worden
+.PP
+Geef de byte waarde die wordt gelezen terug
+.SS "\fBsensordata\fP mpu6050::read_acc ()"
+
+.PP
+Lees accelerometer en geef terug als sensordata\&. Lees de x, y en z waarde van de accelerometer en geef deze terug als sensordata waarde
+.SS "\fBsensordata\fP mpu6050::read_gyro ()"
+
+.PP
+Lees gyroscoop en geef terug als sensordata\&. Lees de x, y en z waarde van de gyroscoop en geef deze terug als sensordata waarde
+.SS "bool mpu6050::start ()"
+
+.PP
+Start functie voor de mpu, zal true teruggeven als het gelukt is/false als het niet gelukt is\&. Check of het WHOAMI adres het adres van de mpu teruggeeft om te controleren of het verbonden is\&.
+.PP
+Reset \fBmpu6050\fP en wacht tot het weer aan staat
+.PP
+Reset gyroscoop, accelerometer en temperatuursensor
+.PP
+Start de clock
+.PP
+Zet de lowpass filter aan op de accelerometer x en y (alleen relevant voor mijn project)
+.SS "void mpu6050::write (const uint_fast8_t value)"
+
+.PP
+Schrijf waarde naar mpu register\&. Start write transactie met schrijven naar mpu adres
+.PP
+Schrijf de meegegeven waarde
+.PP
+Stop de transactie
+.SS "void mpu6050::write_register (const uint_fast8_t r_address, const uint_fast8_t value)"
+
+.PP
+Schrijf waarde naar specifiek register in de mpu chip\&. Start write transactie met schrijven naar mpu adres
+.PP
+Schrijf het adres en de meegegeven waarde
+.PP
+Stop de transactie
+
+.SH "Author"
+.PP 
+Generated automatically by Doxygen for IPASS from the source code\&.

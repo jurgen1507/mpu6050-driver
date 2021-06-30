@@ -1,0 +1,131 @@
+\hypertarget{classmpu6050}{}\doxysection{mpu6050 Class Reference}
+\label{classmpu6050}\index{mpu6050@{mpu6050}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmpu6050_abe54df5d2a971f90ee41e243dd21d611}\label{classmpu6050_abe54df5d2a971f90ee41e243dd21d611}} 
+{\bfseries mpu6050} (hwlib\+::i2c\+\_\+bus \&bus)
+\item 
+bool \mbox{\hyperlink{classmpu6050_af3abfb858bf250ad369533abe81a3026}{start}} ()
+\begin{DoxyCompactList}\small\item\em Start functie voor de mpu, zal true teruggeven als het gelukt is/false als het niet gelukt is. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmpu6050_a5c1fb6c43542286f0f0bd6fc7166a1ff}{write}} (const uint\+\_\+fast8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Schrijf waarde naar mpu register. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmpu6050_a64c62f93f0f9f782e7c4a82cacc4f24c}{write\+\_\+register}} (const uint\+\_\+fast8\+\_\+t r\+\_\+address, const uint\+\_\+fast8\+\_\+t value)
+\begin{DoxyCompactList}\small\item\em Schrijf waarde naar specifiek register in de mpu chip. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{classmpu6050_adcec45b6dac2ddeab5ad69ac29cf9300}{read8}} (uint8\+\_\+t r\+\_\+address)
+\begin{DoxyCompactList}\small\item\em Lees 8 bits uit i2c bus. \end{DoxyCompactList}\item 
+int16\+\_\+t \mbox{\hyperlink{classmpu6050_aa46d6cea7c46ccf8d4c162ba320a6b26}{read16}} (uint8\+\_\+t r\+\_\+address\+\_\+high, uint8\+\_\+t r\+\_\+address\+\_\+low)
+\begin{DoxyCompactList}\small\item\em Lees 16 bits uit i2c bus. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsensordata}{sensordata}} \mbox{\hyperlink{classmpu6050_a1601adfdcae4fb7617b37c6bdfc4983d}{read\+\_\+gyro}} ()
+\begin{DoxyCompactList}\small\item\em Lees gyroscoop en geef terug als sensordata. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structsensordata}{sensordata}} \mbox{\hyperlink{classmpu6050_afd4b8fe4b2fed3a2ba7b8b2524d42647}{read\+\_\+acc}} ()
+\begin{DoxyCompactList}\small\item\em Lees accelerometer en geef terug als sensordata. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmpu6050_a0872bbdf59b902b7aa1a45650ea1a936}\label{classmpu6050_a0872bbdf59b902b7aa1a45650ea1a936}} 
+int16\+\_\+t \mbox{\hyperlink{classmpu6050_a0872bbdf59b902b7aa1a45650ea1a936}{read\+\_\+temp}} ()
+\begin{DoxyCompactList}\small\item\em Lees temperatuur en geef terug als 16 bits integer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmpu6050_afa48dbe4c974717b4e101591d624bff7}\label{classmpu6050_afa48dbe4c974717b4e101591d624bff7}} 
+void \mbox{\hyperlink{classmpu6050_afa48dbe4c974717b4e101591d624bff7}{filter\+\_\+gyro}} (int value)
+\begin{DoxyCompactList}\small\item\em Zet Low Pass Filter op de gyroscoop. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmpu6050_a539b1d15b2fec4b11e9f51175b1f8c23}\label{classmpu6050_a539b1d15b2fec4b11e9f51175b1f8c23}} 
+void \mbox{\hyperlink{classmpu6050_a539b1d15b2fec4b11e9f51175b1f8c23}{filter\+\_\+acc}} (int value)
+\begin{DoxyCompactList}\small\item\em Zet Low Pass Filter op de accelerometer. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmpu6050_a75388e18c79b719a009e5841c3cdee48}\label{classmpu6050_a75388e18c79b719a009e5841c3cdee48}} 
+void \mbox{\hyperlink{classmpu6050_a75388e18c79b719a009e5841c3cdee48}{filter\+\_\+temp}} (int value)
+\begin{DoxyCompactList}\small\item\em Zet Low Pass Filter op de temperatuursensor. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmpu6050_aa46d6cea7c46ccf8d4c162ba320a6b26}\label{classmpu6050_aa46d6cea7c46ccf8d4c162ba320a6b26}} 
+\index{mpu6050@{mpu6050}!read16@{read16}}
+\index{read16@{read16}!mpu6050@{mpu6050}}
+\doxysubsubsection{\texorpdfstring{read16()}{read16()}}
+{\footnotesize\ttfamily int16\+\_\+t mpu6050\+::read16 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r\+\_\+address\+\_\+high,  }\item[{uint8\+\_\+t}]{r\+\_\+address\+\_\+low }\end{DoxyParamCaption})}
+
+
+
+Lees 16 bits uit i2c bus. 
+
+Geef de eerste en laatse 8 bits door ze per stuk te lezen
+
+Geef die waarde terug\mbox{\Hypertarget{classmpu6050_adcec45b6dac2ddeab5ad69ac29cf9300}\label{classmpu6050_adcec45b6dac2ddeab5ad69ac29cf9300}} 
+\index{mpu6050@{mpu6050}!read8@{read8}}
+\index{read8@{read8}!mpu6050@{mpu6050}}
+\doxysubsubsection{\texorpdfstring{read8()}{read8()}}
+{\footnotesize\ttfamily uint8\+\_\+t mpu6050\+::read8 (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{r\+\_\+address }\end{DoxyParamCaption})}
+
+
+
+Lees 8 bits uit i2c bus. 
+
+Schrijf welk register er gelezen moet worden
+
+Geef de byte waarde die wordt gelezen terug\mbox{\Hypertarget{classmpu6050_afd4b8fe4b2fed3a2ba7b8b2524d42647}\label{classmpu6050_afd4b8fe4b2fed3a2ba7b8b2524d42647}} 
+\index{mpu6050@{mpu6050}!read\_acc@{read\_acc}}
+\index{read\_acc@{read\_acc}!mpu6050@{mpu6050}}
+\doxysubsubsection{\texorpdfstring{read\_acc()}{read\_acc()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsensordata}{sensordata}} mpu6050\+::read\+\_\+acc (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lees accelerometer en geef terug als sensordata. 
+
+Lees de x, y en z waarde van de accelerometer en geef deze terug als sensordata waarde\mbox{\Hypertarget{classmpu6050_a1601adfdcae4fb7617b37c6bdfc4983d}\label{classmpu6050_a1601adfdcae4fb7617b37c6bdfc4983d}} 
+\index{mpu6050@{mpu6050}!read\_gyro@{read\_gyro}}
+\index{read\_gyro@{read\_gyro}!mpu6050@{mpu6050}}
+\doxysubsubsection{\texorpdfstring{read\_gyro()}{read\_gyro()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structsensordata}{sensordata}} mpu6050\+::read\+\_\+gyro (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Lees gyroscoop en geef terug als sensordata. 
+
+Lees de x, y en z waarde van de gyroscoop en geef deze terug als sensordata waarde\mbox{\Hypertarget{classmpu6050_af3abfb858bf250ad369533abe81a3026}\label{classmpu6050_af3abfb858bf250ad369533abe81a3026}} 
+\index{mpu6050@{mpu6050}!start@{start}}
+\index{start@{start}!mpu6050@{mpu6050}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily bool mpu6050\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Start functie voor de mpu, zal true teruggeven als het gelukt is/false als het niet gelukt is. 
+
+Check of het WHOAMI adres het adres van de mpu teruggeeft om te controleren of het verbonden is.
+
+Reset \mbox{\hyperlink{classmpu6050}{mpu6050}} en wacht tot het weer aan staat
+
+Reset gyroscoop, accelerometer en temperatuursensor
+
+Start de clock\mbox{\Hypertarget{classmpu6050_a5c1fb6c43542286f0f0bd6fc7166a1ff}\label{classmpu6050_a5c1fb6c43542286f0f0bd6fc7166a1ff}} 
+\index{mpu6050@{mpu6050}!write@{write}}
+\index{write@{write}!mpu6050@{mpu6050}}
+\doxysubsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void mpu6050\+::write (\begin{DoxyParamCaption}\item[{const uint\+\_\+fast8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Schrijf waarde naar mpu register. 
+
+Start write transactie met schrijven naar mpu adres
+
+Schrijf de meegegeven waarde
+
+Stop de transactie\mbox{\Hypertarget{classmpu6050_a64c62f93f0f9f782e7c4a82cacc4f24c}\label{classmpu6050_a64c62f93f0f9f782e7c4a82cacc4f24c}} 
+\index{mpu6050@{mpu6050}!write\_register@{write\_register}}
+\index{write\_register@{write\_register}!mpu6050@{mpu6050}}
+\doxysubsubsection{\texorpdfstring{write\_register()}{write\_register()}}
+{\footnotesize\ttfamily void mpu6050\+::write\+\_\+register (\begin{DoxyParamCaption}\item[{const uint\+\_\+fast8\+\_\+t}]{r\+\_\+address,  }\item[{const uint\+\_\+fast8\+\_\+t}]{value }\end{DoxyParamCaption})}
+
+
+
+Schrijf waarde naar specifiek register in de mpu chip. 
+
+Start write transactie met schrijven naar mpu adres
+
+Schrijf het adres en de meegegeven waarde
+
+Stop de transactie
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+mpu6050-\/driver.\+hpp\item 
+mpu6050-\/driver.\+cpp\end{DoxyCompactItemize}

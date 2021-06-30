@@ -1,6 +1,6 @@
-# mpu6050-driver
+ # mpu6050-driver
 Driver voor de mpu6050 (comments in NL)
-
+In deze driver is gebruik gemaakt van de library "hwlib"
 Voor gebruik van de driver #include "mpu6050-driver.hpp"
 
 <h1>Hoofdfuncties</h1>
